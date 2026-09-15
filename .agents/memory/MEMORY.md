@@ -1,0 +1,1 @@
+- [Next.js artifact setup](nextjs-artifact.md) — convert the web bootstrap carefully when a project specifically requires Next.js.

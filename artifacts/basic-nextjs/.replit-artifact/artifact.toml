@@ -1,0 +1,26 @@
+kind = "web"
+previewPath = "/"
+title = "Basic Next.js Starter"
+description = "A minimal Next.js starter project with a clean home page and standard development configuration."
+version = "1.0.0"
+id = "artifacts/basic-nextjs"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 20717
+
+[services.development]
+run = "pnpm --filter @workspace/basic-nextjs run dev"
+
+[services.production]
+[services.production.build]
+args = [ "pnpm", "--filter", "@workspace/basic-nextjs", "run", "build" ]
+
+[services.production.run]
+args = [ "pnpm", "--filter", "@workspace/basic-nextjs", "run", "start" ]
+
+[services.env]
+PORT = "20717"
+BASE_PATH = "/"

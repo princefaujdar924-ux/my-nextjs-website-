@@ -1,0 +1,21 @@
+{
+  "name": "@workspace/basic-nextjs",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev --hostname 0.0.0.0 --port $PORT",
+    "build": "next build",
+    "start": "next start --hostname 0.0.0.0 --port $PORT",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "next": "^15.5.2",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "typescript": "^5.9.3"
+  }
+}

@@ -1,6 +1,5 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
   "/icon.svg/route": "app/icon.svg/route.js",
-  "/page": "app/page.js",
-  "/supabase-test/page": "app/supabase-test/page.js"
+  "/page": "app/page.js"
 }

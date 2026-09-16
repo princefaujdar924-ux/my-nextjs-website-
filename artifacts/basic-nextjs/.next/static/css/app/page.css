@@ -261,6 +261,32 @@
   line-height: 1.6;
 }
 
+.page_sectionAside__4qc1O {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.page_sectionLink__aTsbk {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--lime);
+  font-size: 0.76rem;
+  font-weight: 800;
+}
+
+.page_sectionLink__aTsbk span {
+  font-size: 1rem;
+  transition: transform 160ms ease;
+}
+
+.page_sectionLink__aTsbk:hover span,
+.page_sectionLink__aTsbk:focus-visible span {
+  transform: translate(2px, -2px);
+}
+
 .page_workoutGrid__REvIT {
   display: grid;
   grid-template-columns: 1fr;
@@ -455,6 +481,10 @@
     align-items: end;
     flex-direction: row;
     justify-content: space-between;
+  }
+
+  .page_sectionAside__4qc1O {
+    align-items: flex-end;
   }
 
   .page_workoutGrid__REvIT {

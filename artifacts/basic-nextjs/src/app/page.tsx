@@ -2,29 +2,22 @@
 
 import { useCallback, useEffect, useState } from 'react';
 import { supabase } from '@/lib/supabaseClient';
+import {
+  displayWorkoutValue,
+  type Workout,
+  workoutFields,
+  workoutPath,
+} from '@/lib/workouts';
 import styles from './page.module.css';
-
-type Workout = {
-  id: string | number;
-  title: string | null;
-  description: string | null;
-  category: string | null;
-  duration_minutes: number | null;
-  level: string | null;
-};
 
 const navigation = [
   { label: 'Home', href: '#home' },
-  { label: 'Workouts', href: '#workouts' },
+  { label: 'Workouts', href: '/workouts' },
   { label: 'Blogs', href: '/blogs' },
   { label: 'About', href: '/about' },
   { label: 'Contact', href: '/contact' },
   { label: 'Admin Login', href: '/admin/login' },
 ];
-
-function displayValue(value: string | number | null, fallback = '—') {
-  return value === null || value === '' ? fallback : String(value);
-}
 
 export default function HomePage() {
   const [workouts, setWorkouts] = useState<Workout[]>([]);
@@ -37,9 +30,7 @@ export default function HomePage() {
 
     const { data, error } = await supabase
       .from('workouts')
-      .select(
-        'id, title, description, category, duration_minutes, level',
-      )
+      .select(workoutFields)
       .eq('is_published', true)
       .order('created_at', { ascending: false });
 
@@ -92,7 +83,7 @@ export default function HomePage() {
             Expert-built workouts for athletes who want to move better, train
             smarter, and keep showing up.
           </p>
-          <a className={styles.heroButton} href="#workouts">
+          <a className={styles.heroButton} href="/workouts">
             Explore workouts <span aria-hidden="true">↘</span>
           </a>
         </div>
@@ -115,9 +106,14 @@ export default function HomePage() {
             <p className={styles.kicker}>The library</p>
             <h2 id="workouts-title">Find your next workout.</h2>
           </div>
-          <p className={styles.sectionIntro}>
-            Curated sessions for every stage of your training.
-          </p>
+          <div className={styles.sectionAside}>
+            <p className={styles.sectionIntro}>
+              Curated sessions for every stage of your training.
+            </p>
+            <a className={styles.sectionLink} href="/workouts">
+              View all workouts <span aria-hidden="true">↗</span>
+            </a>
+          </div>
         </div>
 
         {errorMessage ? (
@@ -146,12 +142,21 @@ export default function HomePage() {
             {workouts.map((workout) => (
               <article className={styles.workoutCard} key={workout.id}>
                 <div className={styles.cardTopline}>
-                  <span>{displayValue(workout.category, 'Workout')}</span>
-                  <span>{displayValue(workout.level, 'All levels')}</span>
+                  <span>
+                    {displayWorkoutValue(workout.category, 'Workout')}
+                  </span>
+                  <span>
+                    {displayWorkoutValue(workout.level, 'All levels')}
+                  </span>
                 </div>
-                <h3>{displayValue(workout.title, 'Untitled workout')}</h3>
+                <h3>
+                  {displayWorkoutValue(workout.title, 'Untitled workout')}
+                </h3>
                 <p className={styles.workoutDescription}>
-                  {displayValue(workout.description, 'Details coming soon.')}
+                  {displayWorkoutValue(
+                    workout.description,
+                    'Details coming soon.',
+                  )}
                 </p>
                 <div className={styles.cardFooter}>
                   <span className={styles.duration}>
@@ -162,7 +167,7 @@ export default function HomePage() {
                   </span>
                   <a
                     className={styles.viewButton}
-                    href={`/workouts/${workout.id}`}
+                    href={workoutPath(workout)}
                   >
                     View workout <span aria-hidden="true">↗</span>
                   </a>

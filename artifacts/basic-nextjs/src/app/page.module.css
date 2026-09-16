@@ -258,6 +258,32 @@
   line-height: 1.6;
 }
 
+.sectionAside {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.sectionLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--lime);
+  font-size: 0.76rem;
+  font-weight: 800;
+}
+
+.sectionLink span {
+  font-size: 1rem;
+  transition: transform 160ms ease;
+}
+
+.sectionLink:hover span,
+.sectionLink:focus-visible span {
+  transform: translate(2px, -2px);
+}
+
 .workoutGrid {
   display: grid;
   grid-template-columns: 1fr;
@@ -451,6 +477,10 @@
     align-items: end;
     flex-direction: row;
     justify-content: space-between;
+  }
+
+  .sectionAside {
+    align-items: flex-end;
   }
 
   .workoutGrid {

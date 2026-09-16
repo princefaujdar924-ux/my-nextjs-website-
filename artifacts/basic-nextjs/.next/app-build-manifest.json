@@ -12,11 +12,11 @@
       "static/css/app/page.css",
       "static/chunks/app/page.js"
     ],
-    "/workouts/page": [
+    "/admin/login/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/workouts/page.css",
-      "static/chunks/app/workouts/page.js"
+      "static/css/app/admin/login/page.css",
+      "static/chunks/app/admin/login/page.js"
     ]
   }
 }

@@ -17,5 +17,8 @@
     "react": "catalog:",
     "react-dom": "catalog:",
     "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.116.0"
   }
 }

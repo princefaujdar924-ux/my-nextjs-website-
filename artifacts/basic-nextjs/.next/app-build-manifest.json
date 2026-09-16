@@ -10,6 +10,12 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/page.js"
+    ],
+    "/supabase-test/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/supabase-test/page.css",
+      "static/chunks/app/supabase-test/page.js"
     ]
   }
 }

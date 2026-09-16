@@ -1,1 +1,2 @@
 - [Next.js artifact setup](nextjs-artifact.md) — convert the web bootstrap carefully when a project specifically requires Next.js.
+- [Next.js development cache](next-dev-cache.md) — restart the dev workflow after production builds to avoid stale webpack chunks.

@@ -8,16 +8,8 @@ import {
   workoutFields,
   workoutPath,
 } from '@/lib/workouts';
+import SiteNav from '@/components/site-nav';
 import styles from './page.module.css';
-
-const navigation = [
-  { label: 'Home', href: '#home' },
-  { label: 'Workouts', href: '/workouts' },
-  { label: 'Blogs', href: '/blogs' },
-  { label: 'About', href: '/about' },
-  { label: 'Contact', href: '/contact' },
-  { label: 'Admin Login', href: '/admin/login' },
-];
 
 export default function HomePage() {
   const [workouts, setWorkouts] = useState<Workout[]>([]);
@@ -50,27 +42,7 @@ export default function HomePage() {
 
   return (
     <main id="home" className={styles.page}>
-      <nav className={styles.nav} aria-label="Main navigation">
-        <a className={styles.brand} href="#home" aria-label="Athletics India home">
-          <span className={styles.brandMark}>A</span>
-          <span>
-            Athletics <em>India</em>
-          </span>
-        </a>
-        <div className={styles.navLinks}>
-          {navigation.map((item) => (
-            <a
-              className={`${styles.navLink} ${
-                item.label === 'Admin Login' ? styles.adminLink : ''
-              }`}
-              href={item.href}
-              key={item.label}
-            >
-              {item.label}
-            </a>
-          ))}
-        </div>
-      </nav>
+      <SiteNav />
 
       <section className={styles.hero} aria-labelledby="hero-title">
         <div className={styles.heroCopy}>
@@ -179,7 +151,7 @@ export default function HomePage() {
       </section>
 
       <footer className={styles.footer}>
-        <a className={styles.brand} href="#home">
+        <a className={styles.brand} href="/">
           <span className={styles.brandMark}>A</span>
           <span>
             Athletics <em>India</em>

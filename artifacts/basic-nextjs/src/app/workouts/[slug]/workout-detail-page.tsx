@@ -9,16 +9,8 @@ import {
   type WorkoutStep,
   workoutFields,
 } from '@/lib/workouts';
+import SiteNav from '@/components/site-nav';
 import styles from '../workouts.module.css';
-
-const navigation = [
-  { label: 'Home', href: '/' },
-  { label: 'Workouts', href: '/workouts' },
-  { label: 'Blogs', href: '/blogs' },
-  { label: 'About', href: '/about' },
-  { label: 'Contact', href: '/contact' },
-  { label: 'Admin Login', href: '/admin/login' },
-];
 
 function StepContent({ step }: { step: WorkoutStep }) {
   if (typeof step === 'string') {
@@ -95,28 +87,7 @@ export default function WorkoutDetailPage({ slug }: { slug: string }) {
 
   return (
     <main className={styles.page}>
-      <nav className={styles.nav} aria-label="Main navigation">
-        <a className={styles.brand} href="/" aria-label="Athletics India home">
-          <span className={styles.brandMark}>A</span>
-          <span>
-            Athletics <em>India</em>
-          </span>
-        </a>
-        <div className={styles.navLinks}>
-          {navigation.map((item) => (
-            <a
-              className={`${styles.navLink} ${
-                item.label === 'Workouts' ? styles.activeLink : ''
-              }`}
-              href={item.href}
-              key={item.label}
-              aria-current={item.label === 'Workouts' ? 'page' : undefined}
-            >
-              {item.label}
-            </a>
-          ))}
-        </div>
-      </nav>
+      <SiteNav />
 
       <section className={styles.main} aria-labelledby="workout-title">
         {errorMessage ? (

@@ -17,12 +17,6 @@
       "static/chunks/main-app.js",
       "static/css/app/workouts/page.css",
       "static/chunks/app/workouts/page.js"
-    ],
-    "/workouts/[slug]/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/workouts/[slug]/page.css",
-      "static/chunks/app/workouts/[slug]/page.js"
     ]
   }
 }

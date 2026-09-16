@@ -1,6 +1,5 @@
 {
   "/icon.svg/route": "app/icon.svg/route.js",
   "/page": "app/page.js",
-  "/workouts/page": "app/workouts/page.js",
-  "/workouts/[slug]/page": "app/workouts/[slug]/page.js"
+  "/workouts/page": "app/workouts/page.js"
 }

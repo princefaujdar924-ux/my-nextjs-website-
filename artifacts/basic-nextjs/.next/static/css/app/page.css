@@ -632,6 +632,32 @@
   font-size: 0.75rem;
 }
 
+.page_footerLinks__DGiLt {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px;
+}
+
+.page_footerLinks__DGiLt a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--lime);
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+.page_footerLinks__DGiLt a span {
+  font-size: 1rem;
+  transition: transform 160ms ease;
+}
+
+.page_footerLinks__DGiLt a:hover span,
+.page_footerLinks__DGiLt a:focus-visible span {
+  transform: translate(2px, -2px);
+}
+
 @media (min-width: 720px) {
   .page_nav__zpG_3,
   .page_hero__SKW6o,
@@ -676,6 +702,10 @@
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
+  }
+
+  .page_footerLinks__DGiLt {
+    justify-content: flex-end;
   }
 }
 

@@ -447,6 +447,32 @@
   font-size: 0.75rem;
 }
 
+.footerLinks {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px;
+}
+
+.footerLinks a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--lime);
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+.footerLinks a span {
+  font-size: 1rem;
+  transition: transform 160ms ease;
+}
+
+.footerLinks a:hover span,
+.footerLinks a:focus-visible span {
+  transform: translate(2px, -2px);
+}
+
 @media (min-width: 720px) {
   .nav,
   .hero,
@@ -491,6 +517,10 @@
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
+  }
+
+  .footerLinks {
+    justify-content: flex-end;
   }
 }
 

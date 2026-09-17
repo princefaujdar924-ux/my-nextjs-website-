@@ -157,7 +157,10 @@ export default function HomePage() {
             Athletics <em>India</em>
           </span>
         </a>
-        <p>Built for the discipline to begin again.</p>
+        <div className={styles.footerLinks}>
+          <p>Built for the discipline to begin again.</p>
+          <a href="/blogs">Read the journal <span aria-hidden="true">↗</span></a>
+        </div>
       </footer>
     </main>
   );
